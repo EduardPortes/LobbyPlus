@@ -15,7 +15,6 @@ public class onChat implements Listener {
         updatePlayerPrefix(event.getPlayer());
     }
 
-
     @EventHandler
     public void onPlayerChat(AsyncPlayerChatEvent event){
         String prefix = getPrefixForPlayer(event.getPlayer());

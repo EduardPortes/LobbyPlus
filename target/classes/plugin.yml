@@ -3,3 +3,11 @@ version: 1.1
 author: P0rtz
 main: me.p0rtz.lobbyplus.LobbyPlus
 api-version: 1.8.8
+permissions:
+  lobbyplus.move:
+    description: Permissão para mover
+    default: op
+commands:
+  perm:
+    description: Permitir
+    usage: /<command>
