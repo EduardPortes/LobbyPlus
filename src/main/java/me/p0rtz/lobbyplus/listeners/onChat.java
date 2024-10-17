@@ -49,7 +49,4 @@ public class onChat implements Listener {
 
         player.setPlayerListName(prefix + player.getName());
     }
-
-
-
 }

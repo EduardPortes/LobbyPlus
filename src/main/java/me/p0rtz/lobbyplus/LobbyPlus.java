@@ -1,5 +1,6 @@
 package me.p0rtz.lobbyplus;
 
+import me.p0rtz.lobbyplus.System.LobbyItens;
 import me.p0rtz.lobbyplus.System.MessageTask;
 import me.p0rtz.lobbyplus.listeners.onChat;
 import org.apache.logging.log4j.message.Message;
@@ -32,6 +33,7 @@ public class LobbyPlus extends JavaPlugin implements Listener {
         System.out.println(NAME + ANSI_GREEN + "     ---------------------------------" + ANSI_RESET);
 
         getPluginManager().registerEvents(new onChat(), this);
+        getPluginManager().registerEvents(new LobbyItens(), this);
         manager = Bukkit.getScoreboardManager();
         scoreboard = manager.getMainScoreboard();
 
