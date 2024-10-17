@@ -1,6 +1,8 @@
 package me.p0rtz.lobbyplus;
 
+import me.p0rtz.lobbyplus.System.MessageTask;
 import me.p0rtz.lobbyplus.listeners.onChat;
+import org.apache.logging.log4j.message.Message;
 import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -25,13 +27,21 @@ public class LobbyPlus extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
         System.out.println(NAME + ANSI_GREEN + "     ---------------------------------" + ANSI_RESET);
-        System.out.println(NAME +"     This plugin is now running");
+        System.out.println(NAME +"     LobbyPlus is now running");
         System.out.println(NAME + ANSI_YELLOW +"     Version: " + ANSI_RESET +" 1.1");
         System.out.println(NAME + ANSI_GREEN + "     ---------------------------------" + ANSI_RESET);
 
         getPluginManager().registerEvents(new onChat(), this);
         manager = Bukkit.getScoreboardManager();
         scoreboard = manager.getMainScoreboard();
+
+        startMessageTask("Msg a cada 5 min");
+    }
+
+    private void startMessageTask(String msg) {
+
+        new MessageTask(msg).runTaskTimer(this, 0,6000);
+
     }
 
     @Override
