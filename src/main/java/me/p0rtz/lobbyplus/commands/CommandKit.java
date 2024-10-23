@@ -4,27 +4,17 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerQuitEvent;
 
 import java.util.HashSet;
 import java.util.Set;
 
-public class CommandKit implements CommandExecutor, Listener {
+public class CommandKit implements CommandExecutor {
 
     public static Set<String> jogadoresPermitidos = new HashSet<>();
 
     public static Set<String> getJogadoresPermitidos() {
         return jogadoresPermitidos;
-    }
-
-    @EventHandler
-    public void onPlayerQuit(PlayerQuitEvent event){
-        var player = event.getPlayer();
-        if (jogadoresPermitidos.contains(player.getName())) {
-            jogadoresPermitidos.remove(player.getName());
-        }
     }
 
     @Override

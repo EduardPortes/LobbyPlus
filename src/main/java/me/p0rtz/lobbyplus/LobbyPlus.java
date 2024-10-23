@@ -4,6 +4,7 @@ import me.p0rtz.lobbyplus.System.LobbyItens;
 import me.p0rtz.lobbyplus.System.MessageTask;
 import me.p0rtz.lobbyplus.commands.CommandKit;
 import me.p0rtz.lobbyplus.listeners.onChat;
+import me.p0rtz.lobbyplus.listeners.onLobby;
 import org.apache.logging.log4j.message.Message;
 import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
@@ -30,12 +31,12 @@ public class LobbyPlus extends JavaPlugin implements Listener {
     public void onEnable() {
         System.out.println(NAME + ANSI_GREEN + "     ---------------------------------" + ANSI_RESET);
         System.out.println(NAME +"     LobbyPlus is now running");
-        System.out.println(NAME + ANSI_YELLOW +"     Version: " + ANSI_RESET +" 1.1");
+        System.out.println(NAME + ANSI_YELLOW +"     Version: " + ANSI_RESET +" 1.2");
         System.out.println(NAME + ANSI_GREEN + "     ---------------------------------" + ANSI_RESET);
 
         getPluginManager().registerEvents(new onChat(), this);
         getPluginManager().registerEvents(new LobbyItens(), this);
-        getPluginManager().registerEvents(new CommandKit(), this);
+        getPluginManager().registerEvents(new onLobby(), this);
 
         getCommand("perm").setExecutor(new CommandKit());
 
